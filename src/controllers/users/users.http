@@ -1,0 +1,29 @@
+@hostname = localhost
+@port = 3000
+@host = http://{{hostname}}:{{port}}
+@contentType = application/json
+
+
+### LIST 
+GET {{host}}/users?limit=10&offset=0
+
+### FIND ONE
+GET {{host}}/users/66dc646a672b360003dfd78e
+
+### Create
+POSt {{host}}/users
+Content-Type: {{contentType}}
+
+{
+    "name": "hitesh",
+    "email": "test"
+}
+
+### UPDATE
+PATCH {{host}}/users/66dc646a672b360003dfd78e
+Content-Type: {{contentType}}
+
+{
+    "name": "hites",
+    "email": "test"
+}

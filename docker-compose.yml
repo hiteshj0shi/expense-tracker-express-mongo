@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  # postgres-local:
+  #   image: postgres
+  #   ports:
+  #     - 5432:5432
+  #   environment:
+  #     - POSTGRES_PASSWORD=1234
+  mongodb-local:
+    image: mongo
+    ports: 
+      - 27017:27017
