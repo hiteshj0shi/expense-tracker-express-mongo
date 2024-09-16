@@ -2,28 +2,29 @@
 @port = 3000
 @host = http://{{hostname}}:{{port}}
 @contentType = application/json
-
+@userId = 66de9576c52006c47b7bf8ad
 
 ### LIST 
 GET {{host}}/users?limit=10&offset=0
 
 ### FIND ONE
-GET {{host}}/users/66dc646a672b360003dfd78e
+GET {{host}}/users/{{userId}}
 
 ### Create
-POSt {{host}}/users
+POST {{host}}/users
 Content-Type: {{contentType}}
 
 {
     "name": "hitesh",
-    "email": "test"
+    "email": "test@email.com",
+    "phoneNumber": "+91123123123"
 }
 
 ### UPDATE
-PATCH {{host}}/users/66dc646a672b360003dfd78e
+PATCH {{host}}/users/{{userId}}
 Content-Type: {{contentType}}
 
 {
-    "name": "hites",
-    "email": "test"
+    "name": "Hitesh Joshi",
+    "phoneNumber": "+91123123"
 }
